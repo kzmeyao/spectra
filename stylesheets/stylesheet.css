@@ -155,5 +155,16 @@ input {
 	opacity: .2;
 }
 
+.inactive .delete-color {
+	display: none;
+}
+
+.delete-color {
+	font-family: 'Raleway', sans-serif;
+	cursor: pointer;
+	position: absolute;
+	left: .2em;
+}
+
 
 

@@ -22,6 +22,23 @@ gradientWall($('#your-container'), defaultColors, defaultFreq);
 
 $('#freq-input').val(defaultFreq/1000);
 
+function attachDelete() {
+	var $lastColor = $('.colors').last();
+	$lastColor.find('.delete-color').on('click', function(){
+		$(this).parent().remove();
+	});
+}
+
+function addInactiveColor() {
+	$('.colors').append(
+			'<div class="color-block inactive">' +
+			'<a class="delete-color">x</a>' +
+			'<input class="colors-input" type="text" value="add" /></div>');
+	$spec = $('.colors-input', $('.color-block.inactive'));
+	attachSpectrum($spec);
+	attachDelete();
+}
+
 function attachSpectrum($spec) {
 	$spec.spectrum({
 			showInput: true,
@@ -34,19 +51,11 @@ function attachSpectrum($spec) {
                 if($parent.hasClass('inactive')) {
                 	$parent.removeClass('inactive');
                 	$parent.addClass('active');
-                	addColor();	
+                	addInactiveColor();	
                 }
             }
 		});
 	$spec.show();
-}
-
-function addColor() {
-	$('.colors').append(
-			'<div class="color-block inactive">' +
-			'<input class="colors-input" type="text" value="add" /></div>');
-	$spec = $('.colors-input', $('.color-block.inactive'));
-	attachSpectrum($spec);
 }
 
 function populateColors(colors) {
@@ -54,10 +63,12 @@ function populateColors(colors) {
 		$('.colors').append(
 			'<div class="color-block active"' +
 			'style="background-color: ' + this + '">' + 
-			'<input class="colors-input" type="text" value="' + this + '" /></div>');	
+			'<a class="delete-color">x</a>' +
+			'<input class="colors-input" type="text" value="' + this + '" /></div>');
+		attachDelete();	
 	});
 	
-	addColor();			
+	addInactiveColor();			
 	
 	$('.color-block.active').each(function(){
 		$spec = $('.colors-input', this);
