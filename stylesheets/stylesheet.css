@@ -1,5 +1,5 @@
 /*******************************************************************************
-MeyerWeb Reset
+Reset
 *******************************************************************************/
 
 html, body, div, span, applet, object, iframe,
@@ -40,6 +40,13 @@ table {
   border-spacing: 0;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 /*******************************************************************************
 Theme Styles
 *******************************************************************************/
@@ -52,7 +59,7 @@ html, body, #your-container {
 .panel {
 	position: absolute;
 	height: 100%;
-	margin-left: -10em;
+	margin-left: -12em;
 }
 
 .edit-panel {
@@ -61,6 +68,9 @@ html, body, #your-container {
 	background-color: #000;
 	opacity: .2;
 	width: 10em;
+	text-align: right;
+	color: #FFF;
+	padding: 1em;
 }
 
 .floater {
@@ -110,5 +120,28 @@ h1 {
 .edit-button:hover {
 	opacity: .7;
 }
+
+input {
+	color: #FFF;
+	font-family: 'Raleway', sans-serif;
+	background : none;
+	border : none;
+	text-align: right;
+}
+
+.freq {
+	height: 10%;
+}
+
+#freq-input {
+	width: 100%;
+	font-size: 2.5em;
+}
+
+.colors {
+	height: 80%;
+	width: 100%;
+}
+
 
 

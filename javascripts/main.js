@@ -20,9 +20,22 @@ var defaultFreq = 5000;
    
 gradientWall($('#your-container'), defaultColors, defaultFreq);
 
+$('#freq-input').val(defaultFreq);
+
+function populateColors(colors) {
+	var len = colors.length;
+	$.each(colors, function(){
+		$('.colors').append(
+			'<div style="height:' + 100/len + '%">' + 
+			'<input class="colors-input" value="' + this + '" /></div>');	
+	});
+}
+
+populateColors(defaultColors);
+
 $('.edit-button').on('click', function(){
 	if ($(this).hasClass('on')) {
-		$('.panel').animate({ 'margin-left' : '-10em' });
+		$('.panel').animate({ 'margin-left' : '-12em' });
 		$(this).text('edit');
 		$(this).removeClass('on');
 	} else {
