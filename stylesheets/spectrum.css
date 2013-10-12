@@ -226,7 +226,7 @@ License: MIT
 }
 .sp-container, .sp-container button, .sp-container input, .sp-color, .sp-hue
 {
-    font: normal 12px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    font-family: 'Merriweather', serif;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -251,14 +251,15 @@ License: MIT
     width: 100%;
 }
 .sp-input {
-   font-size: 12px !important;
-   border: 1px inset;
+   font-size: 16px !important;
+   border: 1px solid #D9D9D9;
    padding: 4px 5px;
    margin: 0;
    width: 100%;
    background:transparent;
    border-radius: 3px;
-   color: #222;
+   color: #999;
+   text-align: center;
 }
 .sp-input:focus  {
     border: 1px solid orange;
@@ -279,7 +280,6 @@ License: MIT
 .sp-picker-container
 {
     width: 172px;
-    border-left: solid 1px #fff;
 }
 
 /* Palettes */
@@ -323,6 +323,7 @@ License: MIT
 
 /* Buttons */
 .sp-button-container {
+	width: 100%;
     float: right;
 }
 
@@ -349,7 +350,7 @@ License: MIT
 {
     position:relative;
     width:25px;
-    height: 20px;
+    height: 15px;
     border: solid 1px #FFF;
     margin-right: 5px;
     float:left;
@@ -377,32 +378,20 @@ License: MIT
 
 /* Buttons: http://hellohappy.org/css3-buttons/ */
 .sp-container button {
-  background-color: #eeeeee;
-  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: linear-gradient(to bottom, #eeeeee, #cccccc);
-  border: 1px solid #ccc;
-  border-bottom: 1px solid #bbb;
-  border-radius: 3px;
-  color: #333;
-  font-size: 14px;
-  line-height: 1;
-  padding: 5px 4px;
-  text-align: center;
-  text-shadow: 0 1px 0 #eee;
-  vertical-align: middle;
+	width: 100%;
+	border: 1px solid #ccc;
+  	border-bottom: 1px solid #bbb;
+  	border-radius: 3px;
+  	color: #666;
+  	font-size: 14px;
+  	line-height: 1;
+  	padding: 5px 4px;
+  	text-align: center;
+  	background-color: #FFF;
+  	vertical-align: middle;
 }
 .sp-container button:hover {
-    background-color: #dddddd;
-    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: linear-gradient(to bottom, #dddddd, #bbbbbb);
+    background-color: #D9D9D9;
     border: 1px solid #bbb;
     border-bottom: 1px solid #999;
     cursor: pointer;
@@ -419,14 +408,7 @@ License: MIT
 }
 .sp-cancel
 {
-    font-size: 11px;
-    color: #d93f3f !important;
-    margin:0;
-    padding:2px;
-    margin-right: 5px;
-    vertical-align: middle;
-    text-decoration:none;
-
+    display: none;
 }
 .sp-cancel:hover
 {
