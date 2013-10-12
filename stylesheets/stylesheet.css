@@ -59,18 +59,15 @@ html, body, #your-container {
 .panel {
 	position: absolute;
 	height: 100%;
-	margin-left: -12em;
+	margin-left: -10em;
 }
 
 .edit-panel {
 	float: left;
 	height: 100%;
-	background-color: #000;
-	opacity: .2;
 	width: 10em;
 	text-align: right;
 	color: #FFF;
-	padding: 1em;
 }
 
 .floater {
@@ -130,7 +127,14 @@ input {
 }
 
 .freq {
-	height: 10%;
+	height: 10em;
+	overflow: hidden;
+	background-color: #000;
+	opacity: .2;
+}
+
+.wrapper {
+	padding: 2em 1em 2em 1em;
 }
 
 #freq-input {
@@ -139,8 +143,16 @@ input {
 }
 
 .colors {
-	height: 80%;
 	width: 100%;
+}
+
+.color-block {
+	height: 3em;
+}
+
+.inactive {
+	background-color: #000;
+	opacity: .2;
 }
 
 
