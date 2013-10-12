@@ -27,12 +27,23 @@ function populateColors(colors) {
 		$('.colors').append(
 			'<div class="color-block active"' +
 			'style="background-color: ' + this + '">' + 
-			'<input class="colors-input" value="' + this + '" /></div>');	
+			'<input class="colors-input" type="text" value="' + this + '" /></div>');	
 	});
 	
 	$('.colors').append(
 			'<div class="color-block inactive">' +
-			'<input class="colors-input" value="add" /></div>');
+			'<input class="colors-input" type="text" value="add" /></div>');
+			
+	$('.color-block').each(function(){
+		$spec = $('.colors-input', this);
+		$spec.spectrum({
+			showInput: true,
+			hide: function(color) {
+                $(this).parent().css('background-color', color);
+            }
+		});
+		$spec.show();
+	});
 }
 
 populateColors(defaultColors);
