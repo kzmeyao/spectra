@@ -22,6 +22,33 @@ gradientWall($('#your-container'), defaultColors, defaultFreq);
 
 $('#freq-input').val(defaultFreq/1000);
 
+function attachSpectrum($spec) {
+	$spec.spectrum({
+			showInput: true,
+			hide: function(color) {
+				if($(this).val() == 'add') {
+					return;
+				}
+				$parent = $(this).parent();
+                $parent.css('background-color', color);
+                if($parent.hasClass('inactive')) {
+                	$parent.removeClass('inactive');
+                	$parent.addClass('active');
+                	addColor();	
+                }
+            }
+		});
+	$spec.show();
+}
+
+function addColor() {
+	$('.colors').append(
+			'<div class="color-block inactive">' +
+			'<input class="colors-input" type="text" value="add" /></div>');
+	$spec = $('.colors-input', $('.color-block.inactive'));
+	attachSpectrum($spec);
+}
+
 function populateColors(colors) {
 	$.each(colors, function() {
 		$('.colors').append(
@@ -30,19 +57,11 @@ function populateColors(colors) {
 			'<input class="colors-input" type="text" value="' + this + '" /></div>');	
 	});
 	
-	$('.colors').append(
-			'<div class="color-block inactive">' +
-			'<input class="colors-input" type="text" value="add" /></div>');
-			
-	$('.color-block').each(function(){
+	addColor();			
+	
+	$('.color-block.active').each(function(){
 		$spec = $('.colors-input', this);
-		$spec.spectrum({
-			showInput: true,
-			hide: function(color) {
-                $(this).parent().css('background-color', color);
-            }
-		});
-		$spec.show();
+		attachSpectrum($spec);
 	});
 }
 
