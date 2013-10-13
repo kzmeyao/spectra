@@ -176,8 +176,19 @@ function populatePresets(presets) {
 
 populatePresets(presets);
 
+function goFullscreen(id) {
+    var element = document.getElementById(id);
+    
+    if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullScreen) {
+      element.webkitRequestFullScreen();
+   }
+  }
+
 $(document).keyup(function(event) {
   if(event.keyCode == 27) {
       $('.panel').toggle();
+      goFullscreen('your-container');
   }
 });
