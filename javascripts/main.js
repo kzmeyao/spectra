@@ -1,5 +1,5 @@
 function gradientWall($elem, colors, freq) {
-    
+
     var animateBackward = function(){
         $elem.animate({
             'border-spacing': 0
@@ -111,7 +111,7 @@ function refreshSettings(){
 	gradientWall($('#your-container'), colors, freq);
 }
 
-$('.edit-button').on('click', function(){
+$('.edit-button').on('click', function() {
 	if ($(this).hasClass('on')) {
 		$('.panel').animate({ 'margin-left' : '-10em' });
 		refreshSettings();
@@ -123,6 +123,18 @@ $('.edit-button').on('click', function(){
 		$(this).text('done');
 	}		
 }); 
+
+$('.info-button').on('click', function() {
+	var data = $(this).data('click');
+	if(data === 0) {
+		$(this).text("push 'esc' and enjoy");	
+		$(this).data('click', 1);
+	} else if(data === 1) {
+		$(this).text('');
+		$(this).append('see the code at <a href="http://github.com/kzmeyao/gradient-wall" target="_blank">github</a>');	
+		$(this).data('click', 0);
+	}
+});
 
 var presets = {
 	"presets" : [
@@ -163,3 +175,9 @@ function populatePresets(presets) {
 }
 
 populatePresets(presets);
+
+$(document).keyup(function(event) {
+  if(event.keyCode == 27) {
+      $('.panel').toggle();
+  }
+});

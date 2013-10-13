@@ -100,7 +100,7 @@ h1 {
     font-weight: 500;
 }
 
-.edit-button {
+.button {
 	font-family: 'Merriweather', serif;
 	font-style: italic;
 	font-size: .3em;
@@ -115,7 +115,12 @@ h1 {
 	color: #666;
 }
 
-.edit-button:hover {
+.button a {
+	color: #5BCAFF;
+	text-decoration: none;
+}
+
+.button:hover {
 	opacity: .7;
 }
 
