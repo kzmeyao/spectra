@@ -68,6 +68,7 @@ html, body, #your-container {
 	width: 10em;
 	text-align: right;
 	color: #FFF;
+	overflow: auto;
 }
 
 .floater {
@@ -127,19 +128,41 @@ input {
 }
 
 .freq {
-	height: 10em;
 	overflow: hidden;
 	background-color: #000;
 	opacity: .2;
 }
 
 .wrapper {
-	padding: 2em 1em 2em 1em;
+	padding: 1em 1em 1em 1em;
 }
 
 #freq-input {
 	width: 100%;
 	font-size: 2.5em;
+}
+
+.presets {
+	overflow: hidden;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,.2);
+}
+
+.presets ul {
+	padding-right: .35em;
+}
+
+.presets li {
+	opacity: .8;
+	height: 1em;
+	width: 1em;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: .2em;
+}
+
+.presets li:hover {
+	opacity: 1;
 }
 
 .colors {
@@ -165,6 +188,3 @@ input {
 	position: absolute;
 	left: .2em;
 }
-
-
-
