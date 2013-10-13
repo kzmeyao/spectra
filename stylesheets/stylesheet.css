@@ -125,6 +125,7 @@ input {
 	background : none;
 	border : none;
 	text-align: right;
+	width: 90%;
 }
 
 .freq {
@@ -171,6 +172,7 @@ input {
 
 .color-block {
 	height: 3em;
+	padding: 0em .2em 0em .2em;
 }
 
 .inactive {
