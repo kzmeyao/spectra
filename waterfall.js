@@ -1,4 +1,4 @@
-function gradientWall($elem, colors, freq) {
+function Waterfall($elem, colors, freq) {
     
    var animateBackward = function(){
         $elem.animate({
@@ -29,15 +29,10 @@ function gradientWall($elem, colors, freq) {
         });
     }
     
-    gradText = "linear-gradient(" + colors.toString() + ")";
+    var gradText = "linear-gradient(" + colors.toString() + ")";
     $.each(['', '-o-', '-moz-', '-webkit-', '-ms-'], function() {
         $elem.css({ 'background': this + gradText });
     });
     $elem.css({'background-size' : '1% ' + colors.length * 100 + '%'});
     animateForward();
 }
-
-var defaultColors = ['#87FC70', '#55EFCB', '#5BCAFF', '#1AD6FD'];           
-var defaultFreq = 5000;
-   
-gradientWall($('#your-container'), defaultColors, defaultFreq);

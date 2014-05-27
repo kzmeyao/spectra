@@ -1,5 +1,5 @@
-Gradient Wall
+waterfall
 =============
 For the pulsing gradients lovers.
 
-Check out: http://kzmeyao.github.io/gradient-wall/
+[DEMO](http://kzmeyao.github.io/waterfall/)
