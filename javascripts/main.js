@@ -1,6 +1,6 @@
-var Waterfall = function($elem, colors, freq) {
+var Spectra = function($elem, colors, freq) {
 
-    var animateBackward = function(){
+    var animateBackward = function() {
         $elem.animate({
             'border-spacing': 0
         },
@@ -14,7 +14,7 @@ var Waterfall = function($elem, colors, freq) {
              duration: freq
         });
     };
-    var animateForward = function(){
+    var animateForward = function() {
         $elem.animate({
             'border-spacing': 100
         },
@@ -40,7 +40,7 @@ var Waterfall = function($elem, colors, freq) {
 var defaultColors = ['#87FC70', '#55EFCB', '#5BCAFF', '#1AD6FD'];           
 var defaultFreq = 5000;
    
-new Waterfall($('#your-container'), defaultColors, defaultFreq);
+new Spectra($('#your-container'), defaultColors, defaultFreq);
 
 $('#freq-input').val(defaultFreq/1000);
 
@@ -109,7 +109,7 @@ function refreshSettings(){
 	});
   var $ele = $('#your-container');
 	$ele.stop();
-	new Waterfall($ele, colors, freq);
+	new Spectra($ele, colors, freq);
 }
 
 $('.edit-button').on('click', function() {
