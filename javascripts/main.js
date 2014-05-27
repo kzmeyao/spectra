@@ -1,4 +1,4 @@
-function gradientWall($elem, colors, freq) {
+var Waterfall = function($elem, colors, freq) {
 
     var animateBackward = function(){
         $elem.animate({
@@ -13,7 +13,7 @@ function gradientWall($elem, colors, freq) {
              },
              duration: freq
         });
-    }
+    };
     var animateForward = function(){
         $elem.animate({
             'border-spacing': 100
@@ -27,7 +27,7 @@ function gradientWall($elem, colors, freq) {
              },
              duration: freq
         });
-    }
+    };
     
     gradText = "linear-gradient(" + colors.toString() + ")";
     $.each(['', '-o-', '-moz-', '-webkit-', '-ms-'], function() {
@@ -35,12 +35,12 @@ function gradientWall($elem, colors, freq) {
     });
     $elem.css({'background-size' : '1% ' + colors.length * 100 + '%'});
     animateForward();
-}
+};
 
 var defaultColors = ['#87FC70', '#55EFCB', '#5BCAFF', '#1AD6FD'];           
 var defaultFreq = 5000;
    
-gradientWall($('#your-container'), defaultColors, defaultFreq);
+new Waterfall($('#your-container'), defaultColors, defaultFreq);
 
 $('#freq-input').val(defaultFreq/1000);
 
@@ -107,8 +107,9 @@ function refreshSettings(){
 	$('.active').each(function(){
 		colors.push($('input', this).val());
 	});
-	$('#your-container').stop();
-	gradientWall($('#your-container'), colors, freq);
+  var $ele = $('#your-container');
+	$ele.stop();
+	new Waterfall($ele, colors, freq);
 }
 
 $('.edit-button').on('click', function() {
