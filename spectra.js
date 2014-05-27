@@ -1,6 +1,6 @@
 var Spectra = function($elem, colors, freq) {
     
-   var animateBackward = function(){
+   var animateBackward = function() {
         $elem.animate({
             'border-spacing': 0
         },
@@ -14,7 +14,7 @@ var Spectra = function($elem, colors, freq) {
              duration: freq
         });
     };
-    var animateForward = function(){
+    var animateForward = function() {
         $elem.animate({
             'border-spacing': 100
         },
