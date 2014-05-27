@@ -1,4 +1,4 @@
-function Waterfall($elem, colors, freq) {
+var Spectra = function($elem, colors, freq) {
     
    var animateBackward = function(){
         $elem.animate({
@@ -13,7 +13,7 @@ function Waterfall($elem, colors, freq) {
              },
              duration: freq
         });
-    }
+    };
     var animateForward = function(){
         $elem.animate({
             'border-spacing': 100
@@ -27,7 +27,7 @@ function Waterfall($elem, colors, freq) {
              },
              duration: freq
         });
-    }
+    };
     
     var gradText = "linear-gradient(" + colors.toString() + ")";
     $.each(['', '-o-', '-moz-', '-webkit-', '-ms-'], function() {
@@ -35,4 +35,4 @@ function Waterfall($elem, colors, freq) {
     });
     $elem.css({'background-size' : '1% ' + colors.length * 100 + '%'});
     animateForward();
-}
+};
