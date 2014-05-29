@@ -116,25 +116,28 @@ $('.edit-button').on('click', function() {
 	if ($(this).hasClass('on')) {
 		$('.panel').animate({ 'margin-left' : '-10em' });
 		refreshSettings();
-		$(this).text('edit');
 		$(this).removeClass('on');
 	} else {
 		$('.panel').animate({ 'margin-left' : '0em' }); 
 		$(this).addClass('on');
-		$(this).text('done');
 	}		
-}); 
+});
 
-$('.info-button').on('click', function() {
-	var data = $(this).data('click');
-	if(data === 0) {
-		$(this).text("push 'esc' and enjoy");	
-		$(this).data('click', 1);
-	} else if(data === 1) {
-		$(this).text('');
-		$(this).append('see the code at <a href="http://github.com/kzmeyao/gradient-wall" target="_blank">github</a>');	
-		$(this).data('click', 0);
-	}
+document.addEventListener("mozfullscreenchange", function () {
+  $('.panel').toggle();
+}, false);
+
+document.addEventListener("webkitfullscreenchange", function () {
+  $('.panel').toggle();
+}, false);
+
+$('.full-button').on('click', function() {
+  var element = document.getElementById('your-container');
+  if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
 });
 
 var presets = {
@@ -176,20 +179,3 @@ function populatePresets(presets) {
 }
 
 populatePresets(presets);
-
-function goFullscreen(id) {
-    var element = document.getElementById(id);
-    
-    if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullScreen) {
-      element.webkitRequestFullScreen();
-   }
-  }
-
-$(document).keyup(function(event) {
-  if(event.keyCode == 27) {
-      $('.panel').toggle();
-      goFullscreen('your-container');
-  }
-});
